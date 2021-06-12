@@ -60,7 +60,8 @@ $route['translate_uri_dashes'] = TRUE;
 */
 
 // routing user
-$route['users'] = 'UserController/index'; // Example 4
+// $route['users'] = 'UserController/index'; // Example 4
+$route['dashboard/user/delete/(:num)'] = 'Dashboard/delete_user/$1'; // Example 4
 
 $route['api/example/users/(:num)'] = 'api/example/users/id/$1'; // Example 4
 $route['api/example/users/(:num)(\.)([a-zA-Z0-9_-]+)(.*)'] = 'api/example/users/id/$1/format/$3$4'; // Example 8

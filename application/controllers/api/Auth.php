@@ -18,8 +18,6 @@ class Auth extends BD_Controller {
         $this->load->model('Crud');
     }
 
-    
-
     public function login_post()
     {
         $u = $this->post('username'); //Username Posted
@@ -33,10 +31,12 @@ class Auth extends BD_Controller {
         if($p == $match){  //Condition if password matched
         	$token['id'] = $val->id;  //From here
             $token['username'] = $u;
+        	$token['role'] = $val->role;  //From here
             $date = new DateTime();
             $token['iat'] = $date->getTimestamp();
             $token['exp'] = $date->getTimestamp() + 60*60*5; //To here is to generate token
             $output['token'] = JWT::encode($token,$kunci ); //This is the output token
+            $output['role'] = $val->role; //This is the output token
             $this->set_response($output, REST_Controller::HTTP_OK); //This is the respon if success
         }
         else {
