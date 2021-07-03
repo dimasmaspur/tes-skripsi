@@ -33,8 +33,7 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="buttons.html">Pesanan</a>
-                <a class="collapse-item" href="buttons.html">History Pesanan</a>
+                <a class="collapse-item" href="<?= base_url('dashboard/pesanan') ?>">Pesanan</a>
             </div>
         </div>
     </li>
